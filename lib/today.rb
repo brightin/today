@@ -32,7 +32,7 @@ class Today
     EventPrinter.new(@date)
   end
 
-  def empty?
+  def no_events?
     calendar.empty?
   end
 
