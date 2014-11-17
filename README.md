@@ -1,9 +1,6 @@
 # Today
 
-
-## What?
-
-Shout out on Hipchat what's on a google calendar for today
+Shout out on Hipchat what's on a Google Calendar for today
 ![Today Hubot Extension Screenshot](screenshot.png)
 
 
@@ -16,42 +13,24 @@ Obviously we jot this all this information down in a calendar but I'm too lazy f
 
 ## How can I have this too?
 
-You need a YAML file with your config, something like this:
+First, you need to set a couple of `ENV` variables, namely:
 
-```yaml
-in_and_out:
-  calendar_url: {{your calendar as xml}}
-  hipchat_token: {{a token for HipChat}}
-  hipchat_room: {{the room in which you want to read your msg}}
-another_calendar:
-  hipchat_room: {{your calendar as xml}}
-  hipchat_token: {{a token for HipChat}}
-  hipchat_room: {{the room in which you want to read your msg}}
-```
+  * `CALENDAR_URL`: XML calendar feed to read data from. Currently only Google Calendar tested and supported. For multiple calendar sources, use `,` as separator.
+  * `HIPCHAT_TOKEN`: Access token for posting to HipChat.
+  * `HIPCHAT_ROOM`: HipChat room to post today's event summary in.
+  * `TZ` (optional): Time zone where your HipChat room is in. Leave this blank to depend on system time zone information.
 
-You may specify as many configs as you want.
-
-Then you feed this config to the script to see if it works:
+Then call the following Rake task to send a message to HipChat:
 
 ```sh
-bin/today_on_hipchat < my_superawesome_configuration.yml
+$ rake hipchat
 ```
 
-And you set up the obvious cron job for it.
+This rake task can be scheduled as a cron job, e.g. via Heroku scheduler or via `crontab` directly, depending on where you host the application.
 
-## Example Cron-job
 
-A typical use would be to call Today in a daily cron-job.
-You can use the script below as a starting point.
-(mainly useful to see how to use rbenv with this)
+## Support, questions, ideas, contributing
 
-```sh
-#!/bin/sh
+Please open an issue on GitHub!
 
-export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-TZ=Europe/Amsterdam bin/today_on_hipchat < config.yml
-```
-
-Use the TZ environment variable to set the time zone for displaying times.
 
