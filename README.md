@@ -15,7 +15,7 @@ Obviously we jot this all this information down in a calendar but I'm too lazy f
 
 First, you need to set a couple of `ENV` variables, namely:
 
-  * `CALENDAR_URL`: XML Google Calendar feed to read data from. For multiple calendar sources, use `,` as separator.
+  * `CALENDAR_URL`: Google Calendar XML feed to read data from. For multiple calendar sources, use `,` as separator.
   * `HIPCHAT_TOKEN`: Access token for posting to HipChat.
   * `HIPCHAT_ROOM`: HipChat room to post today's event summary in.
   * `TZ` (optional): Time zone where your HipChat room is in. Leave this blank to depend on system time zone information.
