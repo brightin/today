@@ -1,2 +1,3 @@
-.ruby-version
-config.yml
+.env
+*.p12
+spec/fixtures/vcr_cassettes/*
