@@ -13,13 +13,13 @@ RSpec.describe Calendar do
     Dotenv.load
   end
 
-  subject { Calendar.new(ENV['GOOGLE_CALENDAR_ID']) }
+  subject { Calendar.new(ENV['CALENDAR_ID']) }
 
   describe '#events' do
-    it "returns today's events" do
+    it "returns an enumerable object" do
       VCR.use_cassette('events') do
         result = subject.events
-        expect(result).not_to be_empty
+        expect(result).to respond_to(:each)
       end
     end
   end
