@@ -11,6 +11,16 @@ class Calendar
     client.calendar_events(opts.merge(calendarId: id))
   end
 
+  def today(opts = {})
+    events(
+      {
+        orderBy: 'startTime',
+        timeMin: Time.new(Time.now.year, Time.now.month, Time.now.day, 0, 0, 0).iso8601,
+        timeMax: Time.new(Time.now.year, Time.now.month, Time.now.day, 23, 59, 59).iso8601
+      }.merge(opts)
+    )
+  end
+
   private
 
   def client
