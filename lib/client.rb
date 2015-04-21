@@ -12,6 +12,13 @@ class Client
     )
   end
 
+  def calendar(opts = {})
+    api_client.execute!(
+      api_method: calendar_api.calendars.get,
+      parameters: opts
+    ).data
+  end
+
   def calendar_events(opts = {})
     api_client.execute!(
       api_method: calendar_api.events.list,

@@ -7,8 +7,14 @@ class Calendar
     @id = id
   end
 
+  def name
+    @name ||= client.calendar(calendarId: id).summary
+  end
+
   def events(opts = {})
-    client.calendar_events(opts.merge(calendarId: id))
+    client.calendar_events(
+      opts.merge(calendarId: id, singleEvents: true)
+    )
   end
 
   def today(opts = {})
