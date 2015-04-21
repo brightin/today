@@ -30,7 +30,7 @@ Getting this up and running can be quite tricky... Google tends to change these 
 
 ### Calendar ID and Sharing
 
-* Look up the Google Calendar's ID in the Calendar Settings page (somwhere near the XML, ICS, and HTML feed buttons)
+* Look up the Google Calendar's ID in the Calendar Settings page (somewhere near the XML, ICS, and HTML feed buttons)
 * Share the Google Calendar(s) with the service account's e-mail address you  (otherwise, you'll only get an empty event list)
 
 ### Set up `ENV` variables
@@ -41,11 +41,11 @@ Google Calendar ID. For multiple calendars, use `,` as separator.
 
 #### `CLIENT_P12_KEY`
 
-Base64 encoded P12 key. To encode Google's certificat to Base64 with ruby:
+Base64 encoded P12 key. Ruby example:
 
 ~~~ruby
 require 'base64'
-raw_data = File.open('client.p12', 'rb') { |io| io.read }
+raw_data = File.open('<P12_KEY_FILE>', 'rb') { |io| io.read }
 Base64.encode64(raw_data)
 ~~~
 
