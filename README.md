@@ -20,8 +20,7 @@ At our office, every day is different. You never know who you can expect to see 
 
 Instread of having to look this up in our company calendar, we now have this information posted in our company chatroom every morning at 7 AM.
 
-
-## Main features
+Main features:
 
 * All-day and time-based events
 * Combine multiple calendars in a single run
