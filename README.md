@@ -1,7 +1,15 @@
 # Today
 
 Post on HipChat what's on a Google Calendar for today.
-![Today Hubot Extension Screenshot](screenshot.png)
+
+Example:
+
+~~~
+Company Calendar:
+* Person X remote
+* Project Y meeting - 10:00
+* Client meeting - 14:00
+~~~
 
 
 ## Why?
@@ -11,6 +19,13 @@ This project grew out of the need to be informed about how many people one can e
 At our office, every day is different. You never know who you can expect to see there. Some colleagues visit clients, others are doing part time academic work, someone could have a day off or maybe working from home... you get the gist.
 
 Instread of having to look this up in our company calendar, we now have this information posted in our company chatroom every morning at 7 AM.
+
+
+## Main features
+
+* All-day and time-based events
+* Combine multiple calendars in a single run
+* Rake task for easy scheduling (e.g. Heroku scheduler, crontab)
 
 
 ## Setup
