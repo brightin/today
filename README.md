@@ -1,7 +1,8 @@
 # Today
 
-Post on HipChat what's on a Google Calendar for today
+Post on HipChat what's on a Google Calendar for today.
 ![Today Hubot Extension Screenshot](screenshot.png)
+
 
 ## Why?
 
@@ -11,13 +12,14 @@ At our office, every day is different. You never know who you can expect to see 
 
 Instread of having to look this up in our company calendar, we now have this information posted in our company chatroom every morning at 7 AM.
 
-## Installation
 
-## Get the code
+## Setup
+
+### Get the code
 
 First, fork or clone this repository and put it up somewhere (Heroku, your own server, whatever you want).
 
-## Google Calendar API setup
+### Google Calendar API setup
 
 * [Enable the Calendar API](https://console.developers.google.com/flows/enableapi?apiid=calendar) for your Google project.
 * get yourself a [Google Developer service account](https://developers.google.com/identity/protocols/
@@ -26,18 +28,18 @@ OAuth2ServiceAccount). Other OAuth2 authentication methods (client, installed ap
 
 Getting this up and running can be quite tricky... Google tends to change these procedures a lot lately. When in doubt, search for additional instructions.
 
-## Calendar ID and Sharing
+### Calendar ID and Sharing
 
 * Look up the Google Calendar's ID in the Calendar Settings page (somwhere near the XML, ICS, and HTML feed buttons)
 * Share the Google Calendar(s) with the service account's e-mail address you  (otherwise, you'll only get an empty event list)
 
-## Set up `ENV` variables
+### Set up `ENV` variables
 
-### `CALENDAR_ID`
+#### `CALENDAR_ID`
 
 Google Calendar ID. For multiple calendars, use `,` as separator.
 
-### `CLIENT_P12_KEY`
+#### `CLIENT_P12_KEY`
 
 Base64 encoded P12 key. To encode Google's certificat to Base64 with ruby:
 
@@ -47,29 +49,30 @@ raw_data = File.open('client.p12', 'rb') { |io| io.read }
 Base64.encode64(raw_data)
 ~~~
 
-### `CLIENT_P12_PASSWORD`
+#### `CLIENT_P12_PASSWORD`
 
 The certificate password as provided by Google.
 
-### `CLIENT_ISSUER`
+#### `CLIENT_ISSUER`
 
 The service account's e-mail address as provided by Google.
 
-### `HIPCHAT_TOKEN`
+#### `HIPCHAT_TOKEN`
 
 Access token for posting to HipChat.
 
-### `HIPCHAT_ROOM`
+#### `HIPCHAT_ROOM`
 
 HipChat room to post today's event summary in.
 
-### `TZ` (optional)
+#### `TZ` (optional)
 
 Time zone where your HipChat room is in. Leave this blank to depend on system time zone information.
 
-## Run the `hipchat` task
 
-Then call the following Rake task to send a message to HipChat:
+## Usage
+
+Call the following Rake task to send a message to HipChat:
 
 ```sh
 $ rake hipchat
