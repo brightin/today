@@ -17,12 +17,12 @@ Instread of having to look this up in our company calendar, we now have this inf
 
 ### Get the code
 
-First, fork or clone this repository and put it up somewhere (Heroku, your own server, whatever you want).
+First, fork or clone this repository and put it up somewhere (Heroku, your own server, ...).
 
 ### Google Calendar API setup
 
 * [Enable the Calendar API](https://console.developers.google.com/flows/enableapi?apiid=calendar) for your Google project.
-* get yourself a [Google Developer service account](https://developers.google.com/identity/protocols/
+* Get yourself a [Google Developer service account](https://developers.google.com/identity/protocols/
 OAuth2ServiceAccount). Other OAuth2 authentication methods (client, installed app) won't do.
 * Temporarily store the service account's P12 certificate, certificate password and e-mail address somewhere.
 
