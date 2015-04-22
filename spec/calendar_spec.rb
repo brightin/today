@@ -18,8 +18,15 @@ RSpec.describe Calendar do
   describe '#events' do
     it "returns an enumerable object" do
       VCR.use_cassette('events') do
-        result = subject.events
-        expect(result).to respond_to(:each)
+        expect(subject.events).to respond_to(:each)
+      end
+    end
+  end
+
+  describe '#today' do
+    it "returns an enumerable object" do
+      VCR.use_cassette('today') do
+        expect(subject.today).to respond_to(:each)
       end
     end
   end

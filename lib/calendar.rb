@@ -18,11 +18,12 @@ class Calendar
   end
 
   def today(opts = {})
+    now = Time.now
     events(
       {
         orderBy: 'startTime',
-        timeMin: Time.new(Time.now.year, Time.now.month, Time.now.day, 0, 0, 0).iso8601,
-        timeMax: Time.new(Time.now.year, Time.now.month, Time.now.day, 23, 59, 59).iso8601
+        timeMin: Time.new(now.year, now.month, now.day, 0, 0, 0).iso8601,
+        timeMax: Time.new(now.year, now.month, now.day, 23, 59, 59).iso8601
       }.merge(opts)
     )
   end
