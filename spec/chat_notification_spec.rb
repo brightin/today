@@ -21,7 +21,7 @@ RSpec.describe ChatNotification do
       expect(subject.to_s).to eq <<-EOS
 TestCalendar:
 * All-day event
-* Time-based event - 13:00
+* 13:00 Time-based event
 EOS
     end
   end

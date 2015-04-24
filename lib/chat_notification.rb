@@ -14,7 +14,7 @@ class ChatNotification
     events.map do |event|
       start_time = event.start.date_time
       if start_time
-        "* #{event.summary} - #{start_time.strftime('%H:%M')}"
+        "* #{start_time.strftime('%H:%M')} #{event.summary}"
       else
         "* #{event.summary}"
       end
