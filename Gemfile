@@ -15,4 +15,5 @@ group :development, :test do
   gem 'webmock'
   gem 'vcr'
   gem 'dotenv'
+  gem 'timecop'
 end

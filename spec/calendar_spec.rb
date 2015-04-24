@@ -2,6 +2,7 @@ require_relative '../lib/calendar'
 
 require 'vcr'
 require 'dotenv'
+require 'timecop'
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
@@ -26,7 +27,9 @@ RSpec.describe Calendar do
   describe '#today' do
     it "returns an enumerable object" do
       VCR.use_cassette('today') do
-        expect(subject.today).to respond_to(:each)
+        Timecop.freeze(Time.new(2015,4,22, 13, 50, 00)) do
+          expect(subject.today).to respond_to(:each)
+        end
       end
     end
   end
